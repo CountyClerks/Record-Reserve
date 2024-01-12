@@ -1,0 +1,11 @@
+/*
+    Navbar links
+        Home
+            Create a new character
+                Form with character attributes
+            Show current character list
+        Sign Up
+            Firebase username and password
+        Log In
+            Firebase auth
+*/
