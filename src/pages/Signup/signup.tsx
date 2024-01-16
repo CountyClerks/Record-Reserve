@@ -3,7 +3,6 @@ import { useState } from 'react'
 import { db } from '../../services/firebase'
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
 import { doc, setDoc } from 'firebase/firestore'
-import 'firebase/firestore'
 
 export default function Signup() {
     const auth = getAuth()
