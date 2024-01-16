@@ -61,7 +61,7 @@ export default function Signup() {
             </section>
             <section className="signup-redirect">
                 <p>Have an account?</p>
-                <Link to="/" className="login-link">Log In</Link>
+                <Link to="/login" className="login-link">Log In</Link>
             </section>
         </main>
     )
