@@ -1,3 +1,4 @@
+import { Link, useNavigate } from 'react-router-dom'
 export default function Signup() {
     return (
         <main>
@@ -17,6 +18,10 @@ export default function Signup() {
                         required/>
                     <button type="submit" className="signup-button">Sign Up</button>
                 </form>
+            </section>
+            <section className="signup-redirect">
+                <p>Have an account?</p>
+                <Link to="/" className="login-link">Log In</Link>
             </section>
         </main>
 
