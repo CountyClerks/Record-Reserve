@@ -1,29 +1,22 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
-import { db } from '../../services/firebase'
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
-import { doc, setDoc } from 'firebase/firestore'
+import { auth } from '../../services/firebase'
+import { createUserWithEmailAndPassword } from 'firebase/auth'
+import { getDatabase, ref, set } from "firebase/database";
 
 export default function Signup() {
-    const auth = getAuth()
     const [ username, setUsername ] = useState('')
     const [ email, setEmail ] = useState('')
     const [ password, setPassword ] = useState('')
     const navigate = useNavigate()
-
+    const db = getDatabase()
     const register = () => {
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                const user = userCredential.user
-                const userDoc = doc(db, `users/${user.uid}`)
-                function writeNewDoc() {
-                    const docData = {
-                        userEmail: `${user.email}`,
+               set(ref(db, `users/${userCredential.user.uid}`), {
                         username: username,
-                    }
-                    setDoc(userDoc, docData)
-                }
-                writeNewDoc()
+                        email: `${email}`
+                    })
             })
             .catch((error: string) => {
                 console.log(error)
@@ -59,7 +52,7 @@ export default function Signup() {
                     <button type="submit" className="signup-button">Sign Up</button>
                 </form>
             </section>
-            <section className="signup-redirect">
+            <section className="login-redirect">
                 <p>Have an account?</p>
                 <Link to="/login" className="login-link">Log In</Link>
             </section>
