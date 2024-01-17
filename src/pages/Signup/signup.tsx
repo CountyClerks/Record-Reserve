@@ -10,7 +10,8 @@ export default function Signup() {
     const [ password, setPassword ] = useState('')
     const navigate = useNavigate()
     const db = getDatabase()
-    const register = () => {
+    const register = (e: React.ChangeEvent<any>) => {
+        e.preventDefault()
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                set(ref(db, `users/${userCredential.user.uid}`), {
