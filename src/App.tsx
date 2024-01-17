@@ -1,14 +1,12 @@
-// import { useState } from 'react'
 import './App.css'
 import { Outlet } from 'react-router'
 import Navbar from './components/navbar'
 
 function App() {
-
   return (
     <>
-      <Navbar />
-      <Outlet />
+        <Navbar />
+        <Outlet />
     </>
   )
 }
