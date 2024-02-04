@@ -1,20 +1,9 @@
-/*
-    Navbar links
-        Home
-            Create a new character
-                Form with character attributes
-            Show current character list
-        Sign Up
-            Firebase username and password
-        Log In
-            Firebase auth
-*/
 import { Link } from 'react-router-dom'
 import { auth } from "../services/firebase"
 import { signOut } from "firebase/auth"
 import { useNavigate } from "react-router-dom"
 export default function Navbar() {
-    
+
     const navigate = useNavigate()
     const signingOut = (e: React.ChangeEvent<any>) => {
 

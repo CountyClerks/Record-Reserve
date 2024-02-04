@@ -39,7 +39,7 @@ export default function Login() {
                 </form>
             </section>
             <section className="signup-redirect">
-                <p>Don't have an account??</p>
+                <p>Don't have an account?</p>
                 <Link to="/signup" className="signup-link">Log In</Link>
             </section>
         </main>
