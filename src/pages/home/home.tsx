@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { useAuth } from '../../services/auth'
 import { db } from '../../services/firebase'
 import { ref, get, child } from 'firebase/database'
+import { Link } from 'react-router-dom'
 
 export default function Home() {
     const currentUser = useAuth()
@@ -22,9 +23,11 @@ export default function Home() {
     // } 
     return (
         <>
-            <section className="profile-info">
-                {/* {profileName()} */}
-            </section>
+            <main>
+                <li>
+                    <Link to='/new-album'>Add Album</Link>
+                </li>
+            </main>
         </>
     )
 }
