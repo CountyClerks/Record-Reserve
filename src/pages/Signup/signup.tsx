@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { auth } from '../../services/firebase'
 import { createUserWithEmailAndPassword } from 'firebase/auth'
-import { getDatabase, ref, set } from "firebase/database";
+import { getDatabase, ref, set } from 'firebase/database';
 
 export default function Signup() {
     const [ username, setUsername ] = useState('')
