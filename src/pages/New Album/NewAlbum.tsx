@@ -1,9 +1,10 @@
 import { useState } from 'react'
+import { getDatabase, ref, set } from 'firebase/database'
+import { auth } from '../../services/firebase'
 export default function AddAlbum() {
-
     const [albumsFound, setAlbumsFound] = useState([])
-    const [albumDetails, setAlbumDetails] = useState({})
     const [album, setAlbum] = useState('')
+    const db = getDatabase()
 
     const findAlbum = async (e) => {
         e.preventDefault()
@@ -12,15 +13,13 @@ export default function AddAlbum() {
         setAlbumsFound(albumData.results.albummatches.album)
     }
 
-    const addAlbumToList = (album) => {
-        setAlbumDetails({
+    const addAlbumToList = (album, index) => {
+        //Save album details in firebase collection
+        set(ref(db, `users/${auth.currentUser.uid}/albums/${index}`), {
             albumName: album.name,
             albumArtist: album.artist,
             albumImage: album.image[2]["#text"]
         })
-        //Set album details {album name, album artist, album image}
-        //Save album details in firebase collection
-        console.log(albumDetails)
     }
     const listAlbums = albumsFound.map((album, index) => {
         return (
@@ -28,7 +27,7 @@ export default function AddAlbum() {
                 <img src={album.image[2]["#text"]} alt="Album image" />
                 <p>{album.name}</p>
                 <p>{album.artist}</p>
-                <button className="add-album-btn" onClick={() => {addAlbumToList(album)}}>Add Album</button>
+                <button className="add-album-btn" onClick={() => {addAlbumToList(album, index)}}>Add Album</button>
             </div>
         )
     })
