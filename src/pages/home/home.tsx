@@ -33,7 +33,6 @@ export default function Home() {
     }
     const renderAlbums = albums.map((albums, index) => {
         let albumKey = albumKeys[index][0]
-        if(albums) {
             return (
                 <div className="album-list" key={index}>
                     <img src={albums.albumImage} alt="Album image" />
@@ -42,15 +41,6 @@ export default function Home() {
                     <button type="button" className="delete-album-btn" onClick={() => {deleteAlbum(albumKey)}}>Delete Album</button>
                 </div>
             ) 
-        } else if(albums.length = 0) {
-            return (
-                <p>There are no albums saved.</p>
-            )
-        } else {
-            return (
-                <p>Loading...</p>
-            )
-        }
     })
     return (
         <>
