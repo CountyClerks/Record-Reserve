@@ -6,7 +6,6 @@ export default function AddAlbum() {
     
     const [albumsFound, setAlbumsFound] = useState([])
     const [album, setAlbum] = useState('')
-    // const [currentAlbumList, setCurrentAlbums] = useState([])
     const db = getDatabase()
 
     const findAlbum = async (e) => {
