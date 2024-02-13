@@ -1,9 +1,12 @@
 import { useState } from 'react'
-import { getDatabase, ref, set } from 'firebase/database'
+import { getDatabase, ref, set, get, child, push, update } from 'firebase/database'
 import { auth } from '../../services/firebase'
+
 export default function AddAlbum() {
+    
     const [albumsFound, setAlbumsFound] = useState([])
     const [album, setAlbum] = useState('')
+    // const [currentAlbumList, setCurrentAlbums] = useState([])
     const db = getDatabase()
 
     const findAlbum = async (e) => {
@@ -14,13 +17,28 @@ export default function AddAlbum() {
     }
 
     const addAlbumToList = (album, index) => {
-        //Save album details in firebase collection
-        set(ref(db, `users/${auth.currentUser.uid}/albums/${index}`), {
-            albumName: album.name,
-            albumArtist: album.artist,
-            albumImage: album.image[2]["#text"]
+        get(child(ref(db), `users/${auth.currentUser.uid}/albums/`)).then((snapshot) => {
+            if(snapshot.exists()) {
+                const albumData = {
+                    albumName: album.name,
+                    albumArtist: album.artist,
+                    albumImage: album.image[2]["#text"]
+                }
+                const newAlbumKey = push(child(ref(db), `users/${auth.currentUser.uid}/albums/`)).key
+                const updates = {}
+                updates[`users/${auth.currentUser.uid}/albums/` + newAlbumKey] = albumData
+                update(ref(db), updates)
+                console.log(updates)
+            }else {
+                set(ref(db, `users/${auth.currentUser.uid}/albums/${index}`), {
+                    albumName: album.name,
+                    albumArtist: album.artist,
+                    albumImage: album.image[2]["#text"]
+                })
+            }
         })
     }
+
     const listAlbums = albumsFound.map((album, index) => {
         return (
             <div className="album-list" key={index}>
