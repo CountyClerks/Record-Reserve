@@ -3,8 +3,10 @@ import { auth } from '../../services/firebase'
 import { createUserWithEmailAndPassword } from 'firebase/auth'
 import { getDatabase, ref, set } from 'firebase/database';
 import { useFormik } from 'formik'
+import { useState } from 'react';
 
 export default function Signup() {
+    const [ emailError, setEmailError ]= useState('')
     const navigate = useNavigate()
     const db = getDatabase()
 
@@ -21,7 +23,6 @@ export default function Signup() {
         } else if (values.password.length < 6) {
             errors.password = 'Password must be 6 characters or more.'
         }
-
         return errors
     }
     const formik = useFormik({
@@ -40,7 +41,9 @@ export default function Signup() {
                 console.log('test')
             })
             .catch((error) => {
-                console.log(error)
+                if(error.code == "auth/email-already-in-use") {
+                    setEmailError("Email already in use.")
+                }
             })
         }
     })
@@ -57,7 +60,8 @@ export default function Signup() {
                         onChange={formik.handleChange}
                         value={formik.values.email}
                         />
-                    {formik.errors.email ? <div>{formik.errors.email as string}</div> : null}
+                    {formik.errors.email ? <div className="formik-email-error">{formik.errors.email as string}</div> : null}
+                    {emailError ? <div className="emailUsed-error">{emailError as string}</div> : null}
                     <label htmlFor="password">Password </label>
                     <input
                         id="password"
@@ -66,7 +70,7 @@ export default function Signup() {
                         onChange={formik.handleChange}
                         value={formik.values.password} 
                     />
-                    {formik.errors.password ? <div>{formik.errors.password as string}</div> : null}
+                    {formik.errors.password ? <div className="formik-password-error">{formik.errors.password as string}</div> : null}
                     <button type="submit">Sign Up</button>
                 </form>
             </section>
