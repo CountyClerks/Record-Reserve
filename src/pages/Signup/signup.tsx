@@ -9,7 +9,7 @@ export default function Signup() {
     const db = getDatabase()
 
     const validate = values => {
-        const errors = {}
+        const errors: any = {}
         if(!values.email) {
             errors.email = 'Required'
         } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
