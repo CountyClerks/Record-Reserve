@@ -1,56 +1,74 @@
 import { Link, useNavigate } from 'react-router-dom'
-import { useState } from 'react'
 import { auth } from '../../services/firebase'
 import { createUserWithEmailAndPassword } from 'firebase/auth'
 import { getDatabase, ref, set } from 'firebase/database';
+import { useFormik } from 'formik'
 
 export default function Signup() {
-    const [ username, setUsername ] = useState('')
-    const [ email, setEmail ] = useState('')
-    const [ password, setPassword ] = useState('')
     const navigate = useNavigate()
     const db = getDatabase()
-    const register = (e: React.ChangeEvent<any>) => {
-        e.preventDefault()
-        createUserWithEmailAndPassword(auth, email, password)
+
+    const validate = values => {
+        const errors = {}
+        if(!values.email) {
+            errors.email = 'Required'
+        } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+            errors.email = 'Invalid Email Address'
+        }
+
+        if(!values.password) {
+            errors.password = 'Required'
+        } else if (values.password.length < 6) {
+            errors.password = 'Password must be 6 characters or more.'
+        }
+
+        return errors
+    }
+    const formik = useFormik({
+        initialValues: {
+            email: '',
+            password: '',
+        },
+        validate,
+        onSubmit: values => {
+            console.log(values)
+            createUserWithEmailAndPassword(auth, values.email, values.password)
             .then((userCredential) => {
                set(ref(db, `users/${userCredential.user.uid}`), {
-                        username: username,
-                        email: `${email}`
+                        email: `${values.email}`
                     })
+                navigate('/')
+                console.log('test')
             })
-            .catch((error: string) => {
+            .catch((error) => {
                 console.log(error)
             })
-        navigate('/')
-    }
+        }
+    })
 
     return (
         <main>
             <section className='signup-card'>
-                <form className='signup-form' onSubmit={register}>
-                    <input
-                        type="text"
-                        placeholder="Username"
-                        className="signup-input"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                        required/>
-                    <input
+                <form onSubmit={formik.handleSubmit}>
+                    <label htmlFor="email">Email Address </label>
+                    <input 
+                        id="email"
+                        name="email"
                         type="email"
-                        placeholder="Email"
-                        className="signup-input"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required/>
+                        onChange={formik.handleChange}
+                        value={formik.values.email}
+                        />
+                    {formik.errors.email ? <div>{formik.errors.email as string}</div> : null}
+                    <label htmlFor="password">Password </label>
                     <input
+                        id="password"
+                        name="password"
                         type="password"
-                        placeholder="Password"
-                        className="signup-input"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required/>
-                    <button type="submit" className="signup-button">Sign Up</button>
+                        onChange={formik.handleChange}
+                        value={formik.values.password} 
+                    />
+                    {formik.errors.password ? <div>{formik.errors.password as string}</div> : null}
+                    <button type="submit">Sign Up</button>
                 </form>
             </section>
             <section className="login-redirect">
