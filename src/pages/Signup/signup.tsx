@@ -31,7 +31,6 @@ export default function Signup() {
         },
         validate,
         onSubmit: values => {
-            console.log(values)
             createUserWithEmailAndPassword(auth, values.email, values.password)
             .then((userCredential) => {
                set(ref(db, `users/${userCredential.user.uid}`), {
