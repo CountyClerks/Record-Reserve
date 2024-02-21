@@ -2,8 +2,10 @@ import { Link, useNavigate } from 'react-router-dom'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../../services/firebase'
 import { useFormik } from 'formik'
+import { useState } from 'react'
 
 export default function Login() {
+    const [ loginErrors, setLoginErrors ] = useState('')
     const navigate = useNavigate()
 
     const validate = values => {
@@ -29,11 +31,14 @@ export default function Login() {
         onSubmit: values => {
             signInWithEmailAndPassword(auth, values.email, values.password)
             .then((userCredential) => {
+                navigate('/')
             })
             .catch((error) => {
-                console.log(error)
+                console.log(error.code)
+                if(error.code == "auth/invalid-credential") {
+                    setLoginErrors('Invalid login attempt.')
+                }
             })
-        navigate('/')
         }
     })
 
@@ -50,6 +55,7 @@ export default function Login() {
                         value={formik.values.email} 
                     />
                     {formik.errors.email ? <div>{formik.errors.email as string}</div> : null}
+                    {loginErrors ? <div className="login-error">{loginErrors as string}</div> : null}
                     <label htmlFor="password">Password </label>
                     <input
                         id="password"
