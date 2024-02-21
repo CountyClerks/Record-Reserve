@@ -30,7 +30,7 @@ export default function Login() {
         validate,
         onSubmit: values => {
             signInWithEmailAndPassword(auth, values.email, values.password)
-            .then((userCredential) => {
+            .then(() => {
                 navigate('/')
             })
             .catch((error) => {
