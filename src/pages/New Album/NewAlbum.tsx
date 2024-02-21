@@ -16,26 +16,30 @@ export default function AddAlbum() {
     }
 
     const addAlbumToList = (album, index) => {
-        get(child(ref(db), `users/${auth.currentUser.uid}/albums/`)).then((snapshot) => {
-            if(snapshot.exists()) {
-                const albumData = {
-                    albumName: album.name,
-                    albumArtist: album.artist,
-                    albumImage: album.image[2]["#text"]
+        if(!auth) {
+            get(child(ref(db), `users/${auth.currentUser.uid}/albums/`)).then((snapshot) => {
+                if(snapshot.exists()) {
+                    const albumData = {
+                        albumName: album.name,
+                        albumArtist: album.artist,
+                        albumImage: album.image[2]["#text"]
+                    }
+                    const newAlbumKey = push(child(ref(db), `users/${auth.currentUser.uid}/albums/`)).key
+                    const updates = {}
+                    updates[`users/${auth.currentUser.uid}/albums/` + newAlbumKey] = albumData
+                    update(ref(db), updates)
+                    console.log(updates)
+                }else {
+                    set(ref(db, `users/${auth.currentUser.uid}/albums/${index}`), {
+                        albumName: album.name,
+                        albumArtist: album.artist,
+                        albumImage: album.image[2]["#text"]
+                    })
                 }
-                const newAlbumKey = push(child(ref(db), `users/${auth.currentUser.uid}/albums/`)).key
-                const updates = {}
-                updates[`users/${auth.currentUser.uid}/albums/` + newAlbumKey] = albumData
-                update(ref(db), updates)
-                console.log(updates)
-            }else {
-                set(ref(db, `users/${auth.currentUser.uid}/albums/${index}`), {
-                    albumName: album.name,
-                    albumArtist: album.artist,
-                    albumImage: album.image[2]["#text"]
-                })
-            }
-        })
+            })
+        } else {
+            alert('You are not logged in.')
+        }
     }
 
     const listAlbums = albumsFound.map((album, index) => {
