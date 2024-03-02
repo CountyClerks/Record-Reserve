@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { getDatabase, ref, set, get, child, push, update } from 'firebase/database'
 import { auth } from '../../services/firebase'
+// import { useAuth } from '../../services/auth'
 
 export default function AddAlbum() {
-    
+    // console.log(useAuth())
+    // const currentUser = useAuth()
     const [albumsFound, setAlbumsFound] = useState([])
     const [album, setAlbum] = useState('')
     const db = getDatabase()
@@ -16,7 +18,7 @@ export default function AddAlbum() {
     }
 
     const addAlbumToList = (album, index) => {
-        if(!auth) {
+        if(auth) {
             get(child(ref(db), `users/${auth.currentUser.uid}/albums/`)).then((snapshot) => {
                 if(snapshot.exists()) {
                     const albumData = {
