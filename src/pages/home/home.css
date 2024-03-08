@@ -1,0 +1,17 @@
+main {
+    /* background-color: rgba(53,53,53,255); */
+    background-color: #232D3F;
+    height: 100%;
+}
+
+.album-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.album-card {
+    display: flex;
+    flex-direction: row;
+}
