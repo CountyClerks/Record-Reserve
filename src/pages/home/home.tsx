@@ -48,7 +48,9 @@ export default function Home() {
                 <li>
                     <Link to='/new-album'>Add Album</Link>
                 </li>
-                {renderAlbums}
+                <div className= "album-card" >
+                    {renderAlbums}
+                </div>
             </main>
         </>
     )
