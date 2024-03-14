@@ -18,18 +18,18 @@ export default function Navbar() {
     return (
         <header>
             <nav>
-                <ul>
+                <ul className="nav-list">
                     <li>
-                        <Link to='/'>Home</Link>
+                        <Link to='/' className="nav-link">Home</Link>
                     </li>
                     <li>
-                        <Link to='/signup'>Sign Up</Link>
+                        <Link to='/signup' className="nav-link">Sign Up</Link>
                     </li>
                     <li>
-                        <Link to='/login'>Log In</Link>
+                        <Link to='/login' className="nav-link">Log In</Link>
                     </li>
                     <li>
-                        <button type="button" onClick={signingOut}>Log Out</button>
+                        <button type="button" className="log-out-btn" onClick={signingOut}>Log Out</button>
                     </li>
                 </ul>
             </nav>

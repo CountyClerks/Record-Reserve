@@ -1,0 +1,42 @@
+html, body, #root { 
+    margin: 0; 
+    padding: 0; 
+    height: 100%; 
+    width: 100%;
+    overflow-y: hidden;
+}
+
+li {
+    list-style: none;
+}
+
+header {
+    /* background-color: rgba(43,43,43,255); */
+    background-color: #0F0F0F;
+    width: 100%;
+    padding-top: .75em;
+    padding-bottom: .75rem;
+}
+
+.nav-list {
+    display: flex;
+    column-gap: 5%;
+}
+
+.log-out-btn {
+    color: white;
+    border: none;
+    cursor: pointer
+}
+
+ul {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-link {
+    color: rgba(179,179,179,255);
+    text-decoration: none;
+}
