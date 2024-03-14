@@ -36,10 +36,10 @@ ul {
     margin: 0;
 }
 
-.nav-link {
+/* .nav-link {
     color: rgba(179,179,179,255);
     text-decoration: none;
-}
+} */
 
 .profile-image {
     cursor: pointer;
@@ -47,4 +47,20 @@ ul {
 
 .hamburger-menu {
     display: none;
+}
+
+.nav-links{
+    color: white;
+    position: absolute;
+}
+
+.nav-links a{
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links a:hover{
+    background-color: #333;
 }
