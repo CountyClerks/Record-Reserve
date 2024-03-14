@@ -18,40 +18,32 @@ header {
     padding-bottom: .75rem;
 }
 
-.nav-list {
-    display: flex;
-    column-gap: 5%;
-}
-
 .log-out-btn {
     color: white;
     border: none;
     cursor: pointer
 }
 
-ul {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 0;
-    margin: 0;
-}
-
-/* .nav-link {
-    color: rgba(179,179,179,255);
-    text-decoration: none;
-} */
-
 .profile-image {
     cursor: pointer;
 }
 
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 35px;
+    margin-right: 35px;
+}
+
 .hamburger-menu {
+    position: absolute;
     display: none;
 }
 
 .nav-links{
     color: white;
     position: absolute;
+    z-index: 3;
 }
 
 .nav-links a{
