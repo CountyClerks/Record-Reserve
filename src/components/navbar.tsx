@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import { auth } from "../services/firebase"
 import { signOut } from "firebase/auth"
-import { useNavigate } from "react-router-dom"
 import profileImg from "../images/user.svg"
 import { useState } from 'react'
 
@@ -9,7 +8,7 @@ export default function Navbar() {
 
     const [showMenu, setShowMenu] = useState(false)
     const signingOut = (e: React.ChangeEvent<any>) => {
-
+        e.preventDefault()
         signOut(auth).then((
         ) => {
         }).catch((error) => {
