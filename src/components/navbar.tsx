@@ -8,16 +8,14 @@ import { useState } from 'react'
 export default function Navbar() {
 
     const [showMenu, setShowMenu] = useState(false)
-    const navigate = useNavigate()
     const signingOut = (e: React.ChangeEvent<any>) => {
 
-        e.preventDefault()
-
-        signOut(auth).then(() => {
+        signOut(auth).then((
+        ) => {
         }).catch((error) => {
             console.log(error)
         })
-        navigate('/')
+        window.location.reload()
     }
 
     const handleNavClick = () => {
@@ -36,12 +34,11 @@ export default function Navbar() {
                         <img src={profileImg} className="profile-image" onClick={handleNavClick}/>
                         <div className="nav-links" style={{display: showMenu ? 'block' : 'none'}}>
                             <Link to='/signup' className="nav-link">Sign Up</Link>
-                            <Link to='/login' className="nav-link">Log In</Link>    
-                            <button type="button" className="log-out-btn" onClick={signingOut}>Log Out</button>
+                            <Link to='/login' className="nav-link">Log In</Link>   
+                            <Link to="/" className="nav-link" onClick={signingOut}>Log Out</Link> 
                         </div>
                     </div>
                 </div>
-                
             </nav>
         </header>
     )
