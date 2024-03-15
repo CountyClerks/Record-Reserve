@@ -1,3 +1,14 @@
+@font-face {
+    font-family: Roboto;
+    src: url(./fonts/Roboto-Regular.ttf)
+}
+
+*{
+    box-sizing: border-box;
+    font-family: Roboto;
+}
+
+
 html, body, #root { 
     margin: 0; 
     padding: 0; 
@@ -9,65 +20,3 @@ html, body, #root {
 li {
     list-style: none;
 }
-
-header {
-    background-color: #0F0F0F;
-    width: 100%;
-    padding-top: .75em;
-    padding-bottom: .75rem;
-}
-
-.log-out-btn {
-    color: white;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    background-color: #0F0F0F;
-    height: .9em;
-    border-radius: 5px;
-}
-
-.profile-image {
-    cursor: pointer;
-}
-
-.navbar{
-    display: flex;
-    justify-content: space-evenly;
-    margin-left: 35px;
-    margin-right: 35px;
-}
-
-.hamburger-menu {
-    position: absolute;
-    display: none;
-}
-
-.nav-links{
-    margin-top: 5px;
-    color: white;
-    background-color: #0F0F0F;
-    position: absolute;
-    z-index: 3;
-    width: 10em;
-}
-
-.nav-links a{
-    display: block;
-    padding: 15px;
-    color: white;
-    text-decoration: none;
-}
-
-.nav-links a:hover{
-    background-color: #333;
-}
-
-.nav-link {
-    text-align: center;
-    border-radius: 5px;
-    font-size: .9em;
-    height: .9em;
-    vertical-align: center;
-}
-
