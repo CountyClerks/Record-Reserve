@@ -36,8 +36,8 @@ export default function Home() {
             return (
                 <div className="album-list" key={index}>
                     <img src={albums.albumImage} alt="Album image" />
-                    <p>{albums.albumName}</p>
-                    <p>{albums.albumArtist}</p>
+                    <p className="album-name">{albums.albumName}</p>
+                    <p className="album-artist">{albums.albumArtist}</p>
                     <button type="button" className="delete-album-btn" onClick={() => {deleteAlbum(albumKey)}}>Delete Album</button>
                 </div>
             ) 
