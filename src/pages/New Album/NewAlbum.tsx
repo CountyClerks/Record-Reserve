@@ -48,8 +48,8 @@ export default function AddAlbum() {
         return (
             <div className="album-list" key={index}>
                 <img src={album.image[2]["#text"]} alt="Album image" />
-                <p>{album.name}</p>
-                <p>{album.artist}</p>
+                <p className="album-name">{album.name}</p>
+                <p className="album-artist">{album.artist}</p>
                 <button className="add-album-btn" onClick={() => {addAlbumToList(album, index)}}>Add Album</button>
             </div>
         )
@@ -63,9 +63,9 @@ export default function AddAlbum() {
                         placeholder="Album Name"
                         className="find-album-name"
                         onChange={(e) => setAlbum(e.target.value)}/>
-                    <button type="submit">Find Album</button>
+                    <button className="find-album-btn" type="submit">Find Album</button>
                 </form>
-                <div className="album-list">
+                <div className="album-card">
                     {listAlbums}
                 </div>
             </section>

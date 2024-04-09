@@ -1,0 +1,36 @@
+.new-album-card {
+    background-color: #232D3F;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+}
+
+.album-card {
+    margin-top: 20px;
+    height: 100%;
+}
+
+.find-album {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.find-album-btn {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5%;
+    height: 36px;
+    padding: 0 .75rem 0 .75rem;
+    cursor: pointer;
+}
+
+.find-album-name {
+    border: none;
+    border-radius: 5%;
+    height: 36px;
+    text-indent: 5%;
+}
