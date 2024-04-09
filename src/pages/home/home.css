@@ -1,9 +1,9 @@
 main {
     background-color: #232D3F;
-    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 100%;
 }
 
 .album-card {
