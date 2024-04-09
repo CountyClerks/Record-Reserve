@@ -45,8 +45,8 @@ export default function Home() {
     return (
         <>
             <main>
-                <li>
-                    <Link to='/new-album'>Add Album</Link>
+                <li className="new-album-list">
+                    <Link to='/new-album' className="new-album-link">Add New Album</Link>
                 </li>
                 <div className= "album-card" >
                     {renderAlbums}
