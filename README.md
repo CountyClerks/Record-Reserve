@@ -144,4 +144,4 @@ Project Link: [https://github.com/CountyClerks/Record-Reserve](https://github.co
 [React-url]: https://reactjs.org/
 [product-medium]: /src/images/record_medium.PNG
 [product-small]: /src/images/record_small.PNG
-[prudct-search]: /src/images//record_search.PNG
+[product-search]: /src/images//record_search.PNG
