@@ -1,11 +1,9 @@
 import { useState } from 'react'
 import { getDatabase, ref, set, get, child, push, update } from 'firebase/database'
 import { auth } from '../../services/firebase'
-// import { useAuth } from '../../services/auth'
 
 export default function AddAlbum() {
-    // console.log(useAuth())
-    // const currentUser = useAuth()
+
     const [albumsFound, setAlbumsFound] = useState([])
     const [album, setAlbum] = useState('')
     const db = getDatabase()
@@ -16,9 +14,10 @@ export default function AddAlbum() {
         const albumData = await fetchAlbum.json()
         setAlbumsFound(albumData.results.albummatches.album)
     }
-
     const addAlbumToList = (album, index) => {
-        if(auth) {
+        if(auth.currentUser === null) {
+            alert('You are not logged in.')
+        } else {
             get(child(ref(db), `users/${auth.currentUser.uid}/albums/`)).then((snapshot) => {
                 if(snapshot.exists()) {
                     const albumData = {
@@ -39,8 +38,6 @@ export default function AddAlbum() {
                     })
                 }
             })
-        } else {
-            alert('You are not logged in.')
         }
     }
 
