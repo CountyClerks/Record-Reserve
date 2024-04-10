@@ -31,7 +31,6 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
@@ -42,7 +41,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![product-screenshot]](https://example.com)
 
 For the music communities that enjoy collecting physical music medium, such as the Kpop and vinyl spaces, keeping track of all the product you own can get confusing.
 Record Reserve serves as a place to help users keep track of the music they've purchased, using Last.FM's album search API endpoint to easily find music albums.
@@ -114,16 +113,6 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
 <!-- CONTACT -->
 ## Contact
 
@@ -138,7 +127,7 @@ Project Link: [https://github.com/CountyClerks/Record-Reserve](https://github.co
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* Last.FM API[https://www.last.fm/api](https://www.last.fm/api)
+* [Last.FM API](https://www.last.fm/api)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -146,8 +135,6 @@ Project Link: [https://github.com/CountyClerks/Record-Reserve](https://github.co
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
-[license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
 [product-screenshot]: /src/images/recordreserve.PNG
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
