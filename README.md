@@ -64,7 +64,6 @@ Utilizing React on the front end with vite tooling.
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
@@ -139,7 +138,7 @@ Project Link: [https://github.com/CountyClerks/Record-Reserve](https://github.co
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* Last.FM API[]()
+* Last.FM API[https://www.last.fm/api](https://www.last.fm/api)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
