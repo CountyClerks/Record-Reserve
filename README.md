@@ -41,7 +41,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![product-screenshot]](https://example.com)
+<!-- [![product-screenshot]](https://example.com) -->
+[![product-screenshot]]
 
 For the music communities that enjoy collecting physical music medium, such as the Kpop and vinyl spaces, keeping track of all the product you own can get confusing.
 Record Reserve serves as a place to help users keep track of the music they've purchased, using Last.FM's album search API endpoint to easily find music albums.
@@ -96,7 +97,12 @@ This project uses npm to download dependencies.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-WIP
+Search for an album of your choice through the 'Search Album' page.
+[!product-search]
+
+Add your selected album using the 'Add Album" button, and see your album collection on the home page.
+[!product-screenshot]
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -136,3 +142,6 @@ Project Link: [https://github.com/CountyClerks/Record-Reserve](https://github.co
 [product-screenshot]: /src/images/recordreserve.PNG
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
+[product-medium]: /src/images/record_medium.PNG
+[product-small]: /src/images/record_small.PNG
+[prudct-search]: /src/images//record_search.PNG
