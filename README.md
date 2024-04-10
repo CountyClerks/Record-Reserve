@@ -42,7 +42,7 @@
 ## About The Project
 
 <!-- [![product-screenshot]](https://example.com) -->
-[![product-screenshot]]
+[![product-screenshot]]()
 
 For the music communities that enjoy collecting physical music medium, such as the Kpop and vinyl spaces, keeping track of all the product you own can get confusing.
 Record Reserve serves as a place to help users keep track of the music they've purchased, using Last.FM's album search API endpoint to easily find music albums.
@@ -98,10 +98,10 @@ This project uses npm to download dependencies.
 ## Usage
 
 Search for an album of your choice through the 'Search Album' page.
-[!product-search]
+[!product-search]()
 
 Add your selected album using the 'Add Album" button, and see your album collection on the home page.
-[!product-screenshot]
+[!product-screenshot]()
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
