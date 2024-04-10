@@ -8,8 +8,8 @@ main {
 
 .album-card {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     grid-column-gap: 1.25em;
     grid-row-gap: 1.25em;
     width: 70%;
@@ -58,4 +58,28 @@ main {
     border-radius: 5px;
     text-decoration: none;
     color: white;
+}
+
+@media (max-width: 768px) {
+    .album-card {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 1.25em;
+        grid-row-gap: 1.25em;
+        width: 70%;
+    }
+    
+}
+
+@media (min-width: 992px) {
+    .album-card {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-column-gap: 1.25em;
+        grid-row-gap: 1.25em;
+        width: 70%;
+    }
+    
 }
