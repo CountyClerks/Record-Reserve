@@ -98,10 +98,10 @@ This project uses npm to download dependencies.
 ## Usage
 
 Search for an album of your choice through the 'Search Album' page.
-[!product-search]()
+[![product-search]]()
 
 Add your selected album using the 'Add Album" button, and see your album collection on the home page.
-[!product-screenshot]()
+[![product-screenshot]]()
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
