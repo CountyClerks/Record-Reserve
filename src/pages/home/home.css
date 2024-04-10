@@ -83,3 +83,14 @@ main {
     }
     
 }
+
+@media (max-width: 500px) {
+    .album-card {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        grid-column-gap: 1.25em;
+        grid-row-gap: 1.25em;
+        width: 70%;
+    }
+}
