@@ -1,9 +1,9 @@
-.signup-main {
+.signup-main, .login-main {
     display: flex;
     justify-content: center;
 }
 
-.signup-card {
+.signup-card, .login-card {
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -13,7 +13,7 @@
     padding: 2em;
 }
 
-.signup-form {
+.signup-form, .login-form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,20 +21,20 @@
     max-width: 70%;
 }
 
-.login-redirect {
+.login-redirect, .signup-redirect {
     display: inherit;
     flex-direction: column;
     align-items: center;
 }
 
 
-.formik-email-error, .formik-password-error {
+.formik-email-error, .formik-password-error, .formik-login-error {
     color: red;
     text-align: center;
     font-size: .9em;
 }
 
-.signup-btn-submit {
+.signup-btn-submit, .login-btn-submit {
     background-color: #232D3F;
     color: white;
     border-radius: 5%;
