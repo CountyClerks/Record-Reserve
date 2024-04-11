@@ -49,9 +49,9 @@ export default function Signup() {
     })
 
     return (
-        <main>
+        <main className="signup-main">
             <section className='signup-card'>
-                <form onSubmit={formik.handleSubmit}>
+                <form onSubmit={formik.handleSubmit} className="signup-form">
                     <label htmlFor="email">Email Address </label>
                     <input 
                         id="email"
@@ -71,12 +71,12 @@ export default function Signup() {
                         value={formik.values.password} 
                     />
                     {formik.errors.password ? <div className="formik-password-error">{formik.errors.password as string}</div> : null}
-                    <button type="submit">Sign Up</button>
+                    <button type="submit" className="signup-btn-submit">Sign Up</button>
                 </form>
-            </section>
-            <section className="login-redirect">
-                <p>Have an account?</p>
-                <Link to="/login" className="login-link">Log In</Link>
+                <div className="login-redirect">
+                    <p>Have an account?</p>
+                    <Link to="/login" className="login-link">Log In</Link>
+                </div>
             </section>
         </main>
     )

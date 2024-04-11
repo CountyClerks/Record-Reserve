@@ -1,0 +1,47 @@
+.signup-main {
+    display: flex;
+    justify-content: center;
+}
+
+.signup-card {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+    border-radius: 4%;
+    padding: 2em;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 5px;
+    max-width: 70%;
+}
+
+.login-redirect {
+    display: inherit;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.formik-email-error, .formik-password-error {
+    color: red;
+    text-align: center;
+    font-size: .9em;
+}
+
+.signup-btn-submit {
+    background-color: #232D3F;
+    color: white;
+    border-radius: 5%;
+    border: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    cursor: pointer;
+}
