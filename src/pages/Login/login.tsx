@@ -43,9 +43,9 @@ export default function Login() {
     })
 
     return (
-        <main>
+        <main className="login-main">
             <section className='login-card'>
-                <form onSubmit={formik.handleSubmit}>
+                <form onSubmit={formik.handleSubmit} className="login-form">
                     <label htmlFor="email">Email Address </label>
                     <input
                         id="email"
@@ -54,8 +54,8 @@ export default function Login() {
                         onChange={formik.handleChange}
                         value={formik.values.email} 
                     />
-                    {formik.errors.email ? <div>{formik.errors.email as string}</div> : null}
-                    {loginErrors ? <div className="login-error">{loginErrors as string}</div> : null}
+                    {formik.errors.email ? <div className="formik-login-error">{formik.errors.email as string}</div> : null}
+                    {loginErrors ? <div className="formik-login-error">{loginErrors as string}</div> : null}
                     <label htmlFor="password">Password </label>
                     <input
                         id="password"
@@ -64,13 +64,13 @@ export default function Login() {
                         onChange={formik.handleChange}
                         value={formik.values.password} 
                     />
-                    {formik.errors.password ? <div>{formik.errors.password as string}</div> : null}
-                    <button type="submit">Log In</button>
+                    {formik.errors.password ? <div className="formik-password-error">{formik.errors.password as string}</div> : null}
+                    <button type="submit" className="login-btn-submit">Log In</button>
                 </form>
-            </section>
-            <section className="signup-redirect">
-                <p>Don't have an account?</p>
-                <Link to="/signup" className="signup-link">Log In</Link>
+                <div className="signup-redirect">
+                    <p>Don't have an account?</p>
+                    <Link to="/signup" className="signup-link">Log In</Link>
+                </div>
             </section>
         </main>
     )
