@@ -117,16 +117,6 @@ Add your selected album using the 'Add Album" button, and see your album collect
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-<!-- CONTACT -->
-## Contact
-
-Eric Hardy - [Linkedin](https://www.linkedin.com/in/erichardy011/) - erichardy011@gmail.com
-
-Project Link: [https://github.com/CountyClerks/Record-Reserve](https://github.com/CountyClerks/Record-Reserve)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
