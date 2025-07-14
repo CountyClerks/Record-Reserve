@@ -28,7 +28,10 @@ export default function Navbar() {
         <header>
             <nav>
                 <div className="navbar">
-                    <Link to='/' className="home-link">Record Reserve</Link>
+                    <div className="navbar-logo">
+                        <img className='record-image' src='/src/images/vinyl-record.png' />
+                        <Link to='/' className="home-link">Record Reserve</Link>
+                    </div>
                     <div id="hamburger-menu">
                         <button className="profile-button" onClick={handleNavClick}></button>
                         <div className="nav-links" style={{display: showMenu ? 'block' : 'none'}}>
